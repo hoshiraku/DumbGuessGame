@@ -10,7 +10,9 @@ import android.widget.Toast;
 
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity {
+import stanford.androidlib.SimpleActivity;
+
+public class MainActivity extends SimpleActivity {
 
     private int rand1 = 0;
     private int rand2 = 0;
@@ -46,10 +48,12 @@ public class MainActivity extends AppCompatActivity {
     public void click_leftButton(View view) {
         Log.v("verbose", "Left button is clicked. ");
         if(rand1 > rand2){
-            Toast.makeText(this, "You got it.", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "You got it.", Toast.LENGTH_SHORT).show();
+            toast("Great Job!");
             points++;
         }else{
-            Toast.makeText(this, "You sucked.", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "You sucked.", Toast.LENGTH_SHORT).show();
+            toast("You Sucked!");
             points--;
         }
         updateRandomNumber();
@@ -66,10 +70,12 @@ public class MainActivity extends AppCompatActivity {
     public void click_rightButton(View view) {
         Log.v("verbose", "Right button is clicked. ");
         if(rand2 > rand1){
-            Toast.makeText(this, "You got it.", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "You got it.", Toast.LENGTH_SHORT).show();
+            toast("Great Job!");
             points++;
         }else{
-            Toast.makeText(this, "You sucked.", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "You sucked.", Toast.LENGTH_SHORT).show();
+            toast("You sucked!");
             points--;
         }
         updateRandomNumber();
